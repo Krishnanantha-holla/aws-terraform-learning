@@ -7,6 +7,7 @@ terraform {
     encrypt = true
     use_lockfile = true
   }
+  
 
   required_providers {
     aws = {
@@ -34,4 +35,5 @@ resource "aws_s3_bucket" "The-demo-bucket" {
     Name        = "My bucket Here"
     Environment = var.envi
   }
+  
 }
