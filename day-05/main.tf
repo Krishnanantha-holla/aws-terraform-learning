@@ -77,11 +77,13 @@ data "aws_ami" "amazon_linux_2" {
 
 resource "aws_instance" "les-go" {
   ami           = data.aws_ami.amazon_linux_2.id # CORRECTION: Use looked-up AMI ID.
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.sample.id
+  instance_type = "t3.micro"
 
   tags = {
     Enviornment = var.envi
     Name        = "${var.envi} EC2 Instance"
   }
+}
+output "vpc_id" {
+  value = aws_vpc.demo-vpc.id
 }
