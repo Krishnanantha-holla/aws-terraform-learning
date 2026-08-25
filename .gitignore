@@ -1,11 +1,15 @@
-# Terraform local data
-**/.terraform/*
+# Terraform local data & state files
+.terraform/
+**/.terraform/
 *.tfstate
 *.tfstate.*
+*.tfstate.backup
+
+# Crash log files
 crash.log
 crash.*.log
 
-# Terraform variable files (often secrets)
+# Terraform variable files (contains sensitive values / secrets)
 *.tfvars
 *.tfvars.json
 
@@ -19,6 +23,25 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# OS/editor
+# Environment and Secret Files
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.pub
+*.pfx
+*.cer
+*.crt
+aws_credentials
+credentials
+secrets/
+private/
+
+# OS / IDE generated files
 .DS_Store
+Thumbs.db
 .vscode/
+.idea/
+*.swp
+*.swo
